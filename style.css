@@ -1,0 +1,111 @@
+
+* {
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+#page1 {
+	display:none;
+}
+
+#logoContainer {
+	width:100%;
+	height:50%;
+	background-color: rgb(50,50,50);
+	text-align:center;
+	display:flex;
+	align-items: center;
+    justify-content: center;
+}
+
+#btnContainer {
+	width:100%;
+	height:50%;
+	background-color: rgb(50,50,0);
+	display:flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+	font-size:23vw;
+	color: white;
+}
+
+.mainBtn {
+	width:70%;
+	font-size:9vw;
+	padding:10px;
+	margin:15px;
+	text-align:left;
+}
+
+#infoContainer {
+	width:100%;
+	height:30%;
+	background-color: rgb(50,50,50);
+}
+
+.nextInfo {
+	float: left;
+	width: 50%;
+	height: 100%;
+	display:flex;
+	flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.timeScoreInfo {
+	float: right;
+	width: 50%;
+	height: 100%;
+	display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#gameContainer {
+	width:100%;
+	height:70%;
+	background-color: #444444;
+	display:flex;
+	align-items: center;
+    justify-content: center;
+}
+
+table {
+	width:90vw;
+	height:90vw;
+	text-align:center;
+	background-color:blue;
+}
+
+tr, td {
+    border: 7px solid #444444;
+	font-size:9vw;
+	color:white;
+}
+
+
+.text {
+	font-size:5vw;
+	color: white;
+}
+
+.info {
+	font-size:10vw;
+	color: white;
+}
+
+#textNext, #next{
+	margin-left:5vw;
+}
+
+#textTimeScore, #timeScore{
+	margin-right:5vw;
+}
+
