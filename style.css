@@ -5,14 +5,14 @@
 	padding:0;
 }
 
-#page1, #page2 {
+#page3, #page2 {
 	display:none;
 }
 
 #logoContainer {
 	width:100%;
 	height:50%;
-	background-color: rgb(50,50,50);
+	background-color: rgb(32, 30, 30);
 	text-align:center;
 	display:flex;
 	align-items: center;
@@ -22,7 +22,7 @@
 #btnContainer {
 	width:100%;
 	height:50%;
-	background-color: rgb(50,50,0);
+	background-color: rgb(32, 30, 30);
 	display:flex;
 	flex-direction: column;
     justify-content: center;
@@ -31,7 +31,7 @@
 
 #logo {
 	font-size:23vw;
-	color: white;
+	color: magenta;
 }
 
 .mainBtn {
@@ -45,7 +45,7 @@
 #infoContainer {
 	width:100%;
 	height:30%;
-	background-color: rgb(50,50,50);
+	background-color: rgb(32, 30, 30);
 }
 
 .nextInfo {
@@ -71,7 +71,7 @@
 #gameContainer {
 	width:100%;
 	height:70%;
-	background-color: #444444;
+	background-color: rgb(32, 30, 30);
 	display:flex;
 	align-items: center;
     justify-content: center;
@@ -81,12 +81,12 @@ table {
 	width:90vw;
 	height:90vw;
 	text-align:center;
-	background-color:blue;
+	background-color:rgb(19, 11, 122);
 	table-layout:fixed;
 }
 
 tr, td {
-    border: 7px solid #444444;
+    border: 7px solid rgb(32, 30, 30);
 }
 
 .cell {
@@ -96,7 +96,7 @@ tr, td {
 
 .text {
 	font-size:5vw;
-	color: white;
+	color: magenta;
 }
 
 .info {
@@ -115,7 +115,7 @@ tr, td {
 #titleContainer {
 	width:100%;
 	height:15%;
-	background-color: rgb(50,50,50);
+	background-color: rgb(32, 30, 30);
 	display:flex;
 	justify-content: center;
     align-items: center;
@@ -124,7 +124,7 @@ tr, td {
 #boardContainer {
 	width:100%;
 	height:85%;
-	background-color: #444444;
+	background-color: rgb(32, 30, 30);
 	display:flex;
 	justify-content: center;
     align-items: center;
@@ -150,7 +150,7 @@ tr, td {
 
 #title {
 	font-size:13vw;
-	color: white;
+	color: magenta;
 }
 
 .content {
