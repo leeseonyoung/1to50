@@ -5,7 +5,7 @@
 	padding:0;
 }
 
-#page1 {
+#page1, #page2 {
 	display:none;
 }
 
@@ -82,14 +82,17 @@ table {
 	height:90vw;
 	text-align:center;
 	background-color:blue;
+	table-layout:fixed;
 }
 
 tr, td {
     border: 7px solid #444444;
+}
+
+.cell {
 	font-size:9vw;
 	color:white;
 }
-
 
 .text {
 	font-size:5vw;
@@ -107,4 +110,50 @@ tr, td {
 
 #textTimeScore, #timeScore{
 	margin-right:5vw;
+}
+
+#titleContainer {
+	width:100%;
+	height:15%;
+	background-color: rgb(50,50,50);
+	display:flex;
+	justify-content: center;
+    align-items: center;
+}
+
+#boardContainer {
+	width:100%;
+	height:85%;
+	background-color: #444444;
+	display:flex;
+	justify-content: center;
+    align-items: center;
+}
+
+#subBoard {
+	width:90%;
+	height:90%;
+	background-color: #eeedaa;
+	border-radius: 2em;
+	display:flex;
+	align-items: center;
+}
+
+.board {
+	width:34%;
+	height:90%;
+	background-color: #eeedaa;
+	display:flex;
+	flex-direction: column;
+    align-items: flex-end;
+}
+
+#title {
+	font-size:13vw;
+	color: white;
+}
+
+.content {
+	font-size:3vw;
+	color:black;
 }
