@@ -1,23 +1,21 @@
 
-function changeToStartPage(evt) {
-    console.log("change page to page2");
-    document.getElementById("page1").style.display = "none";
-    document.getElementById("page2").style.display = "block";
-    document.getElementById("page3").style.display = "none";
-}
-
-function changeToScorePage(evt) {
-    console.log("change page to page3");
-    document.getElementById("page1").style.display = "none";
-    document.getElementById("page2").style.display = "none";
-    document.getElementById("page3").style.display = "block";
+function changePage(page) {
+    console.log("change page to page"+page);
+ 
+    for(let num = 1; num <=3; num++) {
+        if(num === page)
+            document.getElementById("page"+num).style.display = "block";
+        else
+            document.getElementById("page"+num).style.display = "none";
+    }
 }
 
 window.onload = function () {
-    //document.getElementById("startBtn").addEventListener('click', changeToStartPage);
-    //document.getElementById("scoreBtn").addEventListener('click', changeToScorePage);
-    document.getElementById("startBtn").addEventListener('touchstart', changeToStartPage);
-    document.getElementById("scoreBtn").addEventListener('touchstart', changeToScorePage);
-    
+    document.getElementById("startBtn").addEventListener('touchstart', function(evt){changePage(2);} );
+    document.getElementById("scoreBtn").addEventListener('touchstart', function(evt){changePage(3);} );
+
+    let gameBoard = new GameBoard();
+    gameBoard.draw();
+    gameBoard.addTouchEvent();
 };
 

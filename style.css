@@ -7,6 +7,7 @@
 
 #page3, #page2 {
 	display:none;
+	touch-action: manipulation;
 }
 
 #logoContainer {
@@ -78,8 +79,8 @@
 }
 
 table {
-	width:90vw;
-	height:90vw;
+	width:95vw;
+	height:95vw;
 	text-align:center;
 	background-color:rgb(19, 11, 122);
 	table-layout:fixed;
