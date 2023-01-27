@@ -7,7 +7,11 @@
 
 #page3, #page2 {
 	display:none;
-	touch-action: manipulation;
+	/*touch-action: manipulation;*/
+}
+
+#page2 {
+	touch-action: none;
 }
 
 #logoContainer {
@@ -78,12 +82,19 @@
     justify-content: center;
 }
 
+#count {
+	font-size:50vw;
+	color: magenta;
+	position:absolute;
+	z-index:10;
+}
 table {
 	width:95vw;
 	height:95vw;
 	text-align:center;
 	background-color:rgb(19, 11, 122);
 	table-layout:fixed;
+	position:relative;
 }
 
 tr, td {

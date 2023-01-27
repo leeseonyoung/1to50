@@ -38,6 +38,42 @@ class GameBoard {
         document.getElementById("next").innerText = this.next;
     }
 
+    countAction(num) {
+        console.log(num);
+        //do action
+        if(num == 0) {
+            document.getElementById("count").innerText = "";
+            document.getElementById("page2").style.touchAction = "manipulation";
+        }
+        else
+            document.getElementById("count").innerText = num;
+
+        num--;
+        //let self = this;
+        if(num >= 0)
+            setTimeout(()=> {this.countAction(num)}, 1000);
+            //setTimeout( function() { self.printAction(num); }, 1000);
+    }
+
+    startCount() {  // 3 2 1
+        this.countAction(3);
+        //setTimeout( this.printAction.bind(this), 1000);
+
+
+        /* callback 피라미드
+        let num = 2;
+        setTimeout(function() {
+            console.log(num--);
+            setTimeout(function() {
+                console.log(num--);
+                setTimeout(function() {
+                    console.log(num--);
+                }, 1000);
+            }, 1000);
+        }, 1000);*/
+    }
+
+
     addTouchEvent() { 
         /*for(let row = 0; row < 5; row++) {
             for(let col = 0; col < 5; col++) {
