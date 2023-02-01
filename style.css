@@ -7,12 +7,12 @@
 
 #page3, #page2 {
 	display:none;
-	/*touch-action: manipulation;*/
+	touch-action: manipulation;
 }
 
-#page2 {
+/*#page2 {
 	touch-action: none;
-}
+}*/
 
 #logoContainer {
 	width:100%;
