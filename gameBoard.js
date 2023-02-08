@@ -52,6 +52,7 @@ class GameBoard {
             document.getElementById("count").innerText = "";
             this.isCountDone = true;
             this.startTimer();
+            this.gameClear();   // temp
             //document.getElementById("page2").style.touchAction = "manipulation";
         }
         else
@@ -113,23 +114,55 @@ class GameBoard {
 
     gameClear() {
         clearInterval(this.intervalId);
-        console.log("Great! "+document.getElementById("timeScore").innerHTML);
-        let jbResult = prompt( document.getElementById("timeScore").innerHTML + '\nWell done! Enter a nickname to save.', '' );
+        let score = document.getElementById("timeScore").innerHTML;
+        console.log("Great! "+score);
+        let jbResult = prompt( score + '\nWell done! Enter a nickname to save.', '' );
         if(jbResult === null) {
             console.log("canceled");
         }
         else {
             console.log("confirmed");
+            localStorage.setItem(jbResult, score);
             document.getElementById("page1").style.display = "none";
             document.getElementById("page2").style.display = "none";
             document.getElementById("page3").style.display = "block";
+            this.drawScores();
         }
-        //document.write( jbResult );
-
         //clearTimeout();
-
-
     }
+
+    drawScores() {
+        let tempRank = 1;
+        console.log("draw scores "+localStorage.length);
+        this.drawScoreRow(++tempRank, "sun1", "00:14.2");
+
+        let keys = Object.keys(localStorage);
+        for(let key of keys) {
+            console.log("nick:"+ key + " score:"+localStorage.getItem(key));
+            this.drawScoreRow(++tempRank, key, localStorage.getItem(key));
+        }
+    }
+
+    drawScoreRow(rank, name, score) {
+        let newDivRank = document.createElement("div");
+        let rankText = document.createTextNode(rank);
+        newDivRank.appendChild(rankText);
+        newDivRank.setAttribute("class", "content");
+        document.getElementById("boardRank").appendChild(newDivRank);
+
+        let newDivName = document.createElement("div");
+        let nameText = document.createTextNode(name);
+        newDivName.appendChild(nameText);
+        newDivName.setAttribute("class", "content");
+        document.getElementById("boardName").appendChild(newDivName);
+
+        let newDivScore = document.createElement("div");
+        let scoreText = document.createTextNode(score);
+        newDivScore.appendChild(scoreText);
+        newDivScore.setAttribute("class", "content");
+        document.getElementById("boardScore").appendChild(newDivScore);
+    }
+
     addTouchEvent() { 
         /*for(let row = 0; row < 5; row++) {
             for(let col = 0; col < 5; col++) {

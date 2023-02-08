@@ -9,8 +9,10 @@ function changePage(obj, page) {
             document.getElementById("page"+num).style.display = "none";
     }
 
-    if(page == 2)
-    obj.startCount();
+    if(page === 2)
+        obj.startCount();
+    else if(page === 3)
+        obj.drawScores();
 }
 
 window.onload = function () {
