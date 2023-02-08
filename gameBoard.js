@@ -104,20 +104,30 @@ class GameBoard {
         document.getElementById("timeScore").innerText = pMin+":"+pSec+":"+pMs;
         //console.log(document.getElementById("timeScore").innerHTML);
 
-
     }
 
     startTimer() {
-        setInterval(()=> {this.timerAction()}, 100);
+        this.intervalId = setInterval(()=> {this.timerAction()}, 100);
 
     }
 
     gameClear() {
-        console.log("Great!");
-        document.getElementById("count").innerText = document.getElementById("timeScore").innerHTML;
+        clearInterval(this.intervalId);
+        console.log("Great! "+document.getElementById("timeScore").innerHTML);
+        let jbResult = prompt( document.getElementById("timeScore").innerHTML + '\nWell done! Enter a nickname to save.', '' );
+        if(jbResult === null) {
+            console.log("canceled");
+        }
+        else {
+            console.log("confirmed");
+            document.getElementById("page1").style.display = "none";
+            document.getElementById("page2").style.display = "none";
+            document.getElementById("page3").style.display = "block";
+        }
+        //document.write( jbResult );
 
         //clearTimeout();
-        //clearInterval(intervalId);
+
 
     }
     addTouchEvent() { 

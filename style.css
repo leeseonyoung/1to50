@@ -88,22 +88,26 @@
 	position:absolute;
 	z-index:10;
 }
-table {
-	width:95vw;
-	height:95vw;
-	text-align:center;
-	background-color:rgb(19, 11, 122);
+
+.table {
+	display: table;
 	table-layout:fixed;
-	position:relative;
+	border-spacing: 1.5vw;
+	text-align:center;
 }
 
-tr, td {
-    border: 7px solid rgb(32, 30, 30);
+.row {
+	display: table-row;
 }
 
 .cell {
-	font-size:9vw;
+	display: table-cell;
+	height:18vw;
+	width:19vw;
+	vertical-align: middle;
+	font-size:10vw;
 	color:white;
+	background-color:rgb(19, 11, 122);
 }
 
 .text {
