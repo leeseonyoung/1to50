@@ -137,10 +137,12 @@ class GameBoard {
             }
         }*/
         let cell = document.getElementsByClassName("cell");
-        for(let len = 0; len < cell.length; len++)
+        for(let len = 0; len < cell.length; len++){
             cell[len].addEventListener('touchstart', this.tapAction.bind(this) );   
             // tapAction 에서 쓸 this 를 bind 로 지정. 지정 안했을 시 event trigger callback 의 this 는 글로벌 객체인 window 가 됨
         //document.getElementsByClassName("cell").addEventListener('touchstart', this.tapAction );
+            cell[len].addEventListener('touchend', this.tapEnd.bind(this) );
+        }
     }
 
     tapAction(evt) {
@@ -152,6 +154,8 @@ class GameBoard {
         console.log("target:"+evt.target.id+" text:"+element.innerHTML);
         if(this.next === Number(element.innerHTML)) {
             console.log("!!");
+            element.style.borderStyle = 'inset';
+
             if(this.next === 50) {
                 this.gameClear();
             }
@@ -169,5 +173,10 @@ class GameBoard {
         else {
             
         }
+    }
+
+    tapEnd(evt) {
+        let element = document.getElementById(evt.target.id);
+        element.style.borderStyle = 'outset';
     }
 }

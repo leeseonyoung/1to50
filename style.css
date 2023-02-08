@@ -106,8 +106,11 @@
 	width:19vw;
 	vertical-align: middle;
 	font-size:10vw;
-	color:white;
+	color:rgba(255, 255, 255, 0.959);
 	background-color:rgb(19, 11, 122);
+	border-style:outset;
+	border-width: 1.5vw;
+	border-color:rgb(8, 0, 112);
 }
 
 .text {
