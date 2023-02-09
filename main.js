@@ -1,13 +1,7 @@
 
-function changePage(obj, page) {
-    console.log("change page to page"+page);
- 
-    for(let num = 1; num <=3; num++) {
-        if(num === page)
-            document.getElementById("page"+num).style.display = "block";
-        else
-            document.getElementById("page"+num).style.display = "none";
-    }
+function mainControl(obj, page) {
+
+    obj.changePage(page);
 
     if(page === 2)
         obj.startCount();
@@ -20,7 +14,7 @@ window.onload = function () {
     gameBoard.draw();
     gameBoard.addTouchEvent();
 
-    document.getElementById("startBtn").addEventListener('touchstart', function(evt){changePage(gameBoard, 2);} );
-    document.getElementById("scoreBtn").addEventListener('touchstart', function(evt){changePage(gameBoard, 3);} );
+    document.getElementById("startBtn").addEventListener('touchstart', function(evt){mainControl(gameBoard, 2);} );
+    document.getElementById("scoreBtn").addEventListener('touchstart', function(evt){mainControl(gameBoard, 3);} );
 };
 

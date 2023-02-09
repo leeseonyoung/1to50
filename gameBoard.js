@@ -52,8 +52,6 @@ class GameBoard {
             document.getElementById("count").innerText = "";
             this.isCountDone = true;
             this.startTimer();
-            this.gameClear();   // temp
-            //document.getElementById("page2").style.touchAction = "manipulation";
         }
         else
             document.getElementById("count").innerText = count;
@@ -119,13 +117,12 @@ class GameBoard {
         let jbResult = prompt( score + '\nWell done! Enter a nickname to save.', '' );
         if(jbResult === null) {
             console.log("canceled");
+            this.changePage(1);
         }
         else {
             console.log("confirmed");
             localStorage.setItem(jbResult, score);
-            document.getElementById("page1").style.display = "none";
-            document.getElementById("page2").style.display = "none";
-            document.getElementById("page3").style.display = "block";
+            this.changePage(3);
             this.drawScores();
         }
         //clearTimeout();
@@ -140,6 +137,17 @@ class GameBoard {
         for(let key of keys) {
             console.log("nick:"+ key + " score:"+localStorage.getItem(key));
             this.drawScoreRow(++tempRank, key, localStorage.getItem(key));
+        }
+    }
+
+    changePage(page) {
+        console.log("change page to page"+page);
+
+        for(let num = 1; num <=3; num++) {
+            if(num === page)
+                document.getElementById("page"+num).style.display = "block";
+            else
+                document.getElementById("page"+num).style.display = "none";
         }
     }
 
@@ -199,6 +207,8 @@ class GameBoard {
             else {
                 element.innerText = " ";
                 element.style.backgroundColor = 'rgb(32 ,30 ,30)';
+                element.style.borderColor = 'rgb(32 ,30 ,30)';
+                element.style.borderWidth = '0px';
             }
             this.next++;
             document.getElementById("next").innerText = this.next;
