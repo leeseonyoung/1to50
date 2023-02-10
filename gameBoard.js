@@ -10,6 +10,7 @@ class GameBoard {
     sec;
     ms;
     intervalId;
+    rank;
 
     constructor() {
         this.next = 1;
@@ -18,6 +19,9 @@ class GameBoard {
         this.min = 0;
         this.sec = 0;
         this.ms = 0;
+
+        //localStorage.clear();
+        this.rank = new Rank();
     }
 
     makeNumberArray(array, start) {
@@ -114,30 +118,19 @@ class GameBoard {
         clearInterval(this.intervalId);
         let score = document.getElementById("timeScore").innerHTML;
         console.log("Great! "+score);
-        let jbResult = prompt( score + '\nWell done! Enter a nickname to save.', '' );
-        if(jbResult === null) {
+        let nickname = prompt( score + '\nWell done! Enter a nickname to save.', '' );
+        if(nickname === null) {
             console.log("canceled");
             this.changePage(1);
         }
         else {
             console.log("confirmed");
-            localStorage.setItem(jbResult, score);
+            //let rank = new Rank();
+            this.rank.saveRecord(nickname, score);
+            this.rank.draw();
             this.changePage(3);
-            this.drawScores();
         }
         //clearTimeout();
-    }
-
-    drawScores() {
-        let tempRank = 1;
-        console.log("draw scores "+localStorage.length);
-        this.drawScoreRow(++tempRank, "sun1", "00:14.2");
-
-        let keys = Object.keys(localStorage);
-        for(let key of keys) {
-            console.log("nick:"+ key + " score:"+localStorage.getItem(key));
-            this.drawScoreRow(++tempRank, key, localStorage.getItem(key));
-        }
     }
 
     changePage(page) {
@@ -151,6 +144,22 @@ class GameBoard {
         }
     }
 
+    drawScores() {
+        this.rank.draw();
+
+    }
+    /*
+    drawScores() {
+        let tempRank = 1;
+        console.log("draw scores "+localStorage.length);
+        this.drawScoreRow(++tempRank, "sun1", "00:14.2");
+
+        let keys = Object.keys(localStorage);
+        for(let key of keys) {
+            console.log("nick:"+ key + " score:"+localStorage.getItem(key));
+            this.drawScoreRow(++tempRank, key, localStorage.getItem(key));
+        }
+    }
     drawScoreRow(rank, name, score) {
         let newDivRank = document.createElement("div");
         let rankText = document.createTextNode(rank);
@@ -170,7 +179,7 @@ class GameBoard {
         newDivScore.setAttribute("class", "content");
         document.getElementById("boardScore").appendChild(newDivScore);
     }
-
+*/
     addTouchEvent() { 
         /*for(let row = 0; row < 5; row++) {
             for(let col = 0; col < 5; col++) {
