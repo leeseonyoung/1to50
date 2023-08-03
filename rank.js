@@ -5,11 +5,13 @@ class Rank {
 
     }
 
-    saveRecord(nickname, score) {
+    saveRecord(nickname, scoreMin, scoreSec, scoreMSec) {
+
         let record = {
             name : nickname,
-            score : score
+            score : scoreMin+scoreSec+scoreMSec
         }
+
         /*let record = new Object();
         record.name = nickname;
         record.score = score;*/
@@ -27,7 +29,10 @@ class Rank {
         if(loadRecords === null)
             loadRecords = [];
         loadRecords.push(record);
-        
+        this.sortRecordList(loadRecords);
+        console.log("sorted!");   
+
+        console.log(loadRecords);   
         /*if(loadArr != null)
             loadArr.push(record);
         else{
@@ -44,16 +49,22 @@ class Rank {
         if(recordList === null)
             return;
 
-        this.sortRecordList(recordList);
+        //this.sortRecordList(recordList);
 
         let tempNum = 2;
-        for(let i=0; i<recordList.length; i++)
-            this.drawScoreRow(tempNum++, recordList[i].name, recordList[i].score);
+        for(let i=0; i<recordList.length; i++){
+            let drawScore = recordList[i].score[0]+recordList[i].score[1]+":"+recordList[i].score[2]+recordList[i].score[3]+":"+recordList[i].score[4];
+            this.drawScoreRow(tempNum++, recordList[i].name, drawScore);
+        }
 
     }
 
     sortRecordList(recordList){
-        
+        recordList.sort(function(a,b) {
+            //console.log(a.score+"-"+b.score);
+            return a.score - b.score;
+
+        });
     }
 
     drawScoreRow(rank, name, score) {

@@ -55,7 +55,8 @@ class GameBoard {
         if(count === 0) {
             document.getElementById("count").innerText = "";
             this.isCountDone = true;
-            this.startTimer();
+            this.startTimer(); 
+            //this.gameClear(); // temp
         }
         else
             document.getElementById("count").innerText = count;
@@ -104,8 +105,10 @@ class GameBoard {
         let pMs = this.ms;
 
         //print
-        document.getElementById("timeScore").innerText = pMin+":"+pSec+":"+pMs;
-        //console.log(document.getElementById("timeScore").innerHTML);
+        //document.getElementById("timeScore").innerText = pMin+":"+pSec+":"+pMs;
+        document.getElementById("timeScoreMin").innerText = pMin;
+        document.getElementById("timeScoreSec").innerText = pSec;
+        document.getElementById("timeScoreMSec").innerText = pMs;
 
     }
 
@@ -116,7 +119,10 @@ class GameBoard {
 
     gameClear() {
         clearInterval(this.intervalId);
-        let score = document.getElementById("timeScore").innerHTML;
+        let scoreMin = document.getElementById("timeScoreMin").innerHTML;
+        let scoreSec = document.getElementById("timeScoreSec").innerHTML;
+        let scoreMSec = document.getElementById("timeScoreMSec").innerHTML;
+        let score = scoreMin+":"+scoreSec+":"+scoreMSec;
         console.log("Great! "+score);
         let nickname = prompt( score + '\nWell done! Enter a nickname to save.', '' );
         if(nickname === null) {
@@ -126,7 +132,7 @@ class GameBoard {
         else {
             console.log("confirmed");
             //let rank = new Rank();
-            this.rank.saveRecord(nickname, score);
+            this.rank.saveRecord(nickname, scoreMin, scoreSec, scoreMSec);
             this.rank.draw();
             this.changePage(3);
         }
