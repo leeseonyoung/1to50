@@ -202,6 +202,10 @@
     align-items: flex-end;
 }
 
+#boardName, #boardScore, #boardRank {
+	margin-top:2vw;
+}
+
 #title {
 	font-size:17vw;
 	font-family: 'Concert One', cursive;

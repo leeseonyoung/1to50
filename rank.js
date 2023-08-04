@@ -54,7 +54,7 @@ class Rank {
         this.sortRecordList(recordList);
 
         let tempNum = 2;
-        for(let i=0; i<recordList.length; i++){
+        for(let i=0; i<19; i++){    // top 20
             let drawScore = recordList[i].score[0]+recordList[i].score[1]+":"+recordList[i].score[2]+recordList[i].score[3]+":"+recordList[i].score[4];
             this.drawScoreRow(tempNum++, recordList[i].name, drawScore);
         }
