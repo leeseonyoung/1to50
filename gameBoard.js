@@ -56,7 +56,6 @@ class GameBoard {
             document.getElementById("count").innerText = "";
             this.isCountDone = true;
             this.startTimer(); 
-            //this.gameClear(); // temp
         }
         else
             document.getElementById("count").innerText = count;
@@ -216,17 +215,6 @@ class GameBoard {
                 this.gameClear();
             }
 
-            if(this.next <= 25) {
-                element.innerText = this.numberPhase2[this.next-1];
-            }
-            else {
-                element.innerText = " ";
-                element.style.backgroundColor = 'rgb(32 ,30 ,30)';
-                element.style.borderColor = 'rgb(32 ,30 ,30)';
-                element.style.borderWidth = '0px';
-            }
-            this.next++;
-            document.getElementById("next").innerText = this.next;
         }
         else {
             
@@ -235,6 +223,26 @@ class GameBoard {
 
     tapEnd(evt) {
         let element = document.getElementById(evt.target.id);
-        element.style.borderStyle = 'outset';
+
+        if(this.next === Number(element.innerHTML)) {
+            if(this.next <= 25) {
+                element.innerText = this.numberPhase2[this.next-1];
+                element.style.borderStyle = 'outset';
+            }
+            else {
+                element.innerText = "00";
+                element.style.color = 'rgb(32 ,30 ,30)';
+                element.style.backgroundColor = 'rgb(32 ,30 ,30)';
+                element.style.borderColor = 'rgb(32 ,30 ,30)';
+                element.style.borderStyle = 'dotted'; // temp
+            }
+
+            this.next++;
+            document.getElementById("next").innerText = this.next;
+        }
+        else {
+
+        }
+
     }
 }

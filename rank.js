@@ -49,7 +49,7 @@ class Rank {
         if(recordList === null)
             return;
 
-        //this.sortRecordList(recordList);
+        this.sortRecordList(recordList);
 
         let tempNum = 2;
         for(let i=0; i<recordList.length; i++){
