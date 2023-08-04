@@ -14,9 +14,14 @@
 	touch-action: none;
 }*/
 
-#page1, #page3 {
+#page1 {
 	background-image:url("images/test.jfif");
 	background-repeat:repeat;
+
+}
+
+#page3 {
+	background-color:rgb(255, 255, 221);
 
 }
 
@@ -165,16 +170,17 @@
 
 #boardContainer > div:first-child {
 	width:100%;
-	height:90%;
+	height:80%;
 	display:flex;
 	justify-content: center;
 }
 
 #boardContainer > div:last-child {
 	width:100%;
-	height:10%;
+	height:20%;
 	display:flex;
 	justify-content: flex-end;
+    align-items: flex-end;
 }
 
 
@@ -189,7 +195,7 @@
 
 .board {
 	width:34%;
-	height:90%;
+	height:98%;
 	background-color: #eeedaa;
 	display:flex;
 	flex-direction: column;
@@ -207,11 +213,17 @@
 	color:black;
 }
 
+#csImage {
+	height:90%;
+
+}
+
 .stdBtn {
 	width:20%;
+	height:10vw;
 	font-size:5vw;
 	padding:10px;
-	margin:15px;
+	margin:5%;
 	text-align:center;
 	font-family: 'Concert One', cursive;
 	background-color:beige;

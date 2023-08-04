@@ -102,9 +102,8 @@ class Rank {
             document.getElementById("boardRank").removeChild(document.getElementById("boardRank").firstChild);
             document.getElementById("boardName").removeChild(document.getElementById("boardName").firstChild);
             document.getElementById("boardScore").removeChild(document.getElementById("boardScore").firstChild);
-
         }
-
+        this.drawScoreRow("1", "sun0", "00:12:8");
     }
 }
 /*
