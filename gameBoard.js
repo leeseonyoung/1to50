@@ -55,7 +55,8 @@ class GameBoard {
         if(count === 0) {
             document.getElementById("count").innerText = "";
             this.isCountDone = true;
-            this.startTimer(); 
+            //this.startTimer();
+            this.gameClear(); 
         }
         else
             document.getElementById("count").innerText = count;

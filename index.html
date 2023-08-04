@@ -1,6 +1,9 @@
 <html>
 	<head>
 		<title>1to50</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="style.css" >
 		<script src="rank.js"></script>
 		<script src="gameBoard.js"></script>
@@ -80,25 +83,30 @@
 				<div id="title">HIGH SCORES</div>
 			</div>
 			<div id="boardContainer">
-				<div id="subBoard">
-					<div class="board">
-						<div class="text">Rank</div>
-						<div id="boardRank">
-							<div class="content">1</div>
+				<div>
+					<div id="subBoard">
+						<div class="board">
+							<div class="text">Rank</div>
+							<div id="boardRank">
+								<div class="content">1</div>
+							</div>
+						</div>
+						<div class="board">
+							<div class="text">Name</div>
+							<div id="boardName">
+								<div class="content">sun0</div>
+							</div>
+						</div>
+						<div class="board">
+							<div class="text">Score</div>
+							<div id="boardScore">
+								<div class="content">00:12.8</div>
+							</div>
 						</div>
 					</div>
-					<div class="board">
-						<div class="text">Name</div>
-						<div id="boardName">
-							<div class="content">sun0</div>
-						</div>
-					</div>
-					<div class="board">
-						<div class="text">Score</div>
-						<div id="boardScore">
-							<div class="content">00:12.8</div>
-						</div>
-					</div>
+				</div>
+				<div>
+					<button class="stdBtn" id="clearBtn">CLEAR</button>
 				</div>
 			</div>
 		</div>

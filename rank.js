@@ -44,6 +44,8 @@ class Rank {
     }
 
     draw() {
+        this.clearBoard();
+
         let recordList = JSON.parse(localStorage.getItem("recordList"));
         console.log(recordList);   
         if(recordList === null)
@@ -56,6 +58,9 @@ class Rank {
             let drawScore = recordList[i].score[0]+recordList[i].score[1]+":"+recordList[i].score[2]+recordList[i].score[3]+":"+recordList[i].score[4];
             this.drawScoreRow(tempNum++, recordList[i].name, drawScore);
         }
+
+        document.getElementById("clearBtn").addEventListener('touchstart', this.clearRank.bind(this));
+
 
     }
 
@@ -85,6 +90,21 @@ class Rank {
         newDivScore.appendChild(scoreText);
         newDivScore.setAttribute("class", "content");
         document.getElementById("boardScore").appendChild(newDivScore);
+    }
+
+    clearRank(evt) { 
+        localStorage.clear();
+        this.draw();
+    }
+
+    clearBoard() {
+        while(document.getElementById("boardRank").firstChild)  {
+            document.getElementById("boardRank").removeChild(document.getElementById("boardRank").firstChild);
+            document.getElementById("boardName").removeChild(document.getElementById("boardName").firstChild);
+            document.getElementById("boardScore").removeChild(document.getElementById("boardScore").firstChild);
+
+        }
+
     }
 }
 /*

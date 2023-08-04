@@ -14,10 +14,16 @@
 	touch-action: none;
 }*/
 
+#page1, #page3 {
+	background-image:url("images/test.jfif");
+	background-repeat:repeat;
+
+}
+
 #logoContainer {
 	width:100%;
 	height:50%;
-	background-color: rgb(32, 30, 30);
+	/*background-color: rgb(32, 30, 30);*/
 	text-align:center;
 	display:flex;
 	align-items: center;
@@ -27,16 +33,17 @@
 #btnContainer {
 	width:100%;
 	height:50%;
-	background-color: rgb(32, 30, 30);
+	/*background-color: rgb(32, 30, 30);*/
 	display:flex;
 	flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 #logo {
-	font-size:23vw;
-	color: magenta;
+	font-family: 'Concert One', cursive;
+	font-size:25vw;
+	color: rgb(131, 3, 143);
 }
 
 .mainBtn {
@@ -44,7 +51,9 @@
 	font-size:9vw;
 	padding:10px;
 	margin:15px;
-	text-align:left;
+	text-align:center;
+	font-family: 'Concert One', cursive;
+	background-color:beige;
 }
 
 #infoContainer {
@@ -123,7 +132,9 @@
 
 .text {
 	font-size:5vw;
-	color: magenta;
+	/*color: magenta;*/	
+	font-family: 'Concert One', cursive;
+	color: rgb(131, 3, 143);
 }
 
 .info {
@@ -138,7 +149,7 @@
 #titleContainer {
 	width:100%;
 	height:15%;
-	background-color: rgb(32, 30, 30);
+	/*background-color: rgb(32, 30, 30);*/
 	display:flex;
 	justify-content: center;
     align-items: center;
@@ -147,15 +158,29 @@
 #boardContainer {
 	width:100%;
 	height:85%;
-	background-color: rgb(32, 30, 30);
+	/*background-color: rgb(32, 30, 30);*/
+	display:flex;
+	flex-direction: column;
+}
+
+#boardContainer > div:first-child {
+	width:100%;
+	height:90%;
 	display:flex;
 	justify-content: center;
-    align-items: center;
 }
+
+#boardContainer > div:last-child {
+	width:100%;
+	height:10%;
+	display:flex;
+	justify-content: flex-end;
+}
+
 
 #subBoard {
 	width:90%;
-	height:90%;
+	height:100%;
 	background-color: #eeedaa;
 	border-radius: 2em;
 	display:flex;
@@ -172,11 +197,22 @@
 }
 
 #title {
-	font-size:13vw;
-	color: magenta;
+	font-size:17vw;
+	font-family: 'Concert One', cursive;
+	color: rgb(131, 3, 143);
 }
 
 .content {
 	font-size:3vw;
 	color:black;
+}
+
+.stdBtn {
+	width:20%;
+	font-size:5vw;
+	padding:10px;
+	margin:15px;
+	text-align:center;
+	font-family: 'Concert One', cursive;
+	background-color:beige;
 }
